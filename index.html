@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Technogestió - Reparacions de Mòbils a Palamós</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:Arial, Helvetica, sans-serif;background:#111;color:white;overflow-x:hidden;}
+header{position:fixed;top:0;width:100%;background:rgba(0,0,0,0.9);backdrop-filter:blur(8px);display:flex;justify-content:space-between;align-items:center;padding:15px 40px;z-index:1000;}
+.logo{font-size:22px;font-weight:bold;color:#00c3ff;}
+nav a{margin:0 10px;text-decoration:none;color:white;transition:0.3s;}
+nav a:hover{color:#00c3ff;}
+.lang-switch button{margin-left:8px;padding:5px 10px;border:none;border-radius:5px;background:#222;color:white;cursor:pointer;}
+.lang-switch button.active{background:#00c3ff;}
+.hero{height:100vh;display:flex;justify-content:center;align-items:center;text-align:center;background-image:url("botiga.jpg");background-size:cover;background-position:center;padding:0 20px;}
+.hero-content{animation:fadeUp 1s ease forwards;}
+.hero h1{font-size:50px;margin-bottom:20px;}
+.hero p{font-size:20px;margin-bottom:30px;}
+.btn{padding:12px 30px;background:#00c3ff;color:white;border-radius:30px;text-decoration:none;transition:0.3s;}
+.btn:hover{background:#0099cc;transform:translateY(-3px);}
+.services{padding:100px 40px;text-align:center;background:#181818;}
+.services h2{margin-bottom:60px;font-size:32px;}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px;}
+.card{background:#222;padding:30px;border-radius:15px;transition:0.3s;}
+.card:hover{transform:translateY(-10px);background:#2a2a2a;}
+.card h3{color:#00c3ff;margin-bottom:15px;}
+#contact{padding:80px 20px;}
+.contact-info{text-align:center;margin-bottom:40px;font-size:18px;line-height:2;}
+.contact-info strong{color:#00cfff;}
+form{max-width:500px;margin:30px auto;display:flex;flex-direction:column;}
+input, textarea{padding:12px;margin-bottom:15px;border:none;border-radius:10px;background:#222;color:white;}
+button[type="submit"]{padding:12px;border:none;border-radius:10px;background:#00c3ff;color:white;cursor:pointer;}
+.map-container{display:flex;justify-content:center;margin-top:40px;}
+.map-container iframe{width:100%;max-width:700px;height:350px;border-radius:15px;}
+.social-fixed{position:fixed;bottom:20px;right:20px;display:flex;flex-direction:column;gap:10px;z-index:999;}
+.social-fixed a{width:55px;height:55px;border-radius:50%;display:flex;justify-content:center;align-items:center;background:#25D366;}
+.social-fixed a.instagram{background:#E1306C;}
+.social-fixed img{width:28px;height:28px;}
+#topBtn{position:fixed;bottom:100px;right:25px;background:#00c3ff;border:none;padding:12px 15px;border-radius:50%;cursor:pointer;display:none;}
+footer{text-align:center;padding:20px;background:#000;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+@media (max-width:768px){
+header{padding:12px 15px;flex-direction:column;gap:10px;}
+nav{display:flex;flex-wrap:wrap;justify-content:center;}
+nav a{margin:5px 8px;font-size:14px;}
+.hero h1{font-size:32px;}
+.hero p{font-size:16px;}
+.services{padding:70px 20px;}
+.cards{grid-template-columns:1fr;}
+.map-container iframe{height:250px;}
+.social-fixed{right:15px;bottom:15px;}
+.social-fixed a{width:50px;height:50px;}
+#topBtn{bottom:85px;right:20px;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">Technogestió</div>
+<nav>
+<a href="#services" id="navServices">Serveis</a>
+<a href="#contact" id="navContact">Contacte</a>
+</nav>
+<div class="lang-switch">
+<button class="active">CA</button>
+<button>ES</button>
+<button>EN</button>
+</div>
+</header>
+
+<section class="hero">
+<div class="hero-content">
+<h1>Technogestió</h1>
+<p id="heroText">Especialistes en reparacions de mòbils a Palamós.</p>
+<a href="#contact" class="btn" id="heroBtn">Contacta'ns</a>
+</div>
+</section>
+
+<section id="services" class="services">
+<h2 id="servicesTitle">Els Nostres Serveis</h2>
+<div class="cards">
+<div class="card">
+<h3 id="s1">Canvi de Pantalla</h3>
+<p id="s1p">Reparació ràpida de pantalles trencades.</p>
+</div>
+<div class="card">
+<h3 id="s2">Canvi de Bateria</h3>
+<p id="s2p">Substitució de bateries defectuoses.</p>
+</div>
+<div class="card">
+<h3 id="s3">Reparacions Generals</h3>
+<p id="s3p">Solucions per problemes tècnics diversos.</p>
+</div>
+</div>
+</section>
+
+<section id="contact">
+<div class="contact-info">
+<p><strong id="addrLabel">📍 Adreça:</strong> Carrer Exemple 123, 17230 Palamós</p>
+<p><strong id="phoneLabel">📞 Telèfon:</strong> +34 641 77 12 85</p>
+<p><strong id="emailLabel">📧 Email:</strong> technogestio@gmail.com</p>
+</div>
+
+<form>
+<input type="text" id="nameInput" placeholder="Nom complet">
+<input type="email" id="emailInput" placeholder="Email">
+<textarea rows="5" id="msgInput" placeholder="Escriu el teu missatge..."></textarea>
+<button type="submit" id="sendBtn">Enviar</button>
+</form>
+
+<div class="map-container">
+<iframe src="https://www.google.com/maps?q=Technogestió Palamós&output=embed" loading="lazy"></iframe>
+</div>
+</section>
+
+<div class="social-fixed">
+<a href="https://wa.me/34641771285" target="_blank">
+<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
+</a>
+<a href="https://www.instagram.com/techno.gestio/" target="_blank" class="instagram">
+<img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">
+</a>
+</div>
+
+<button id="topBtn">↑</button>
+
+<footer id="footerText">
+© 2026 Technogestió - Palamós
+</footer>
+
+<script>
+const translations={
+CA:{
+servicesNav:"Serveis",
+contactNav:"Contacte",
+servicesTitle:"Els Nostres Serveis",
+hero:"Especialistes en reparacions de mòbils a Palamós.",
+btn:"Contacta'ns",
+s1:"Canvi de Pantalla",
+s1p:"Reparació ràpida de pantalles trencades.",
+s2:"Canvi de Bateria",
+s2p:"Substitució de bateries defectuoses.",
+s3:"Reparacions Generals",
+s3p:"Solucions per problemes tècnics diversos.",
+name:"Nom complet",
+email:"Email",
+msg:"Escriu el teu missatge...",
+send:"Enviar",
+addr:"📍 Adreça:",
+phone:"📞 Telèfon:",
+emailLabel:"📧 Email:"
+},
+ES:{
+servicesNav:"Servicios",
+contactNav:"Contacto",
+servicesTitle:"Nuestros Servicios",
+hero:"Especialistas en reparación de móviles en Palamós.",
+btn:"Contáctanos",
+s1:"Cambio de Pantalla",
+s1p:"Reparación rápida de pantallas rotas.",
+s2:"Cambio de Batería",
+s2p:"Sustitución de baterías defectuosas.",
+s3:"Reparaciones Generales",
+s3p:"Soluciones para problemas técnicos diversos.",
+name:"Nombre completo",
+email:"Correo electrónico",
+msg:"Escribe tu mensaje...",
+send:"Enviar",
+addr:"📍 Dirección:",
+phone:"📞 Teléfono:",
+emailLabel:"📧 Correo:"
+},
+EN:{
+servicesNav:"Services",
+contactNav:"Contact",
+servicesTitle:"Our Services",
+hero:"Mobile repair specialists in Palamós.",
+btn:"Contact Us",
+s1:"Screen Replacement",
+s1p:"Fast repair of broken screens.",
+s2:"Battery Replacement",
+s2p:"Replacement of defective batteries.",
+s3:"General Repairs",
+s3p:"Solutions for various technical problems.",
+name:"Full Name",
+email:"Email",
+msg:"Write your message...",
+send:"Send",
+addr:"📍 Address:",
+phone:"📞 Phone:",
+emailLabel:"📧 Email:"
+}
+};
+
+document.querySelectorAll(".lang-switch button").forEach(btn=>{
+btn.addEventListener("click",function(){
+document.querySelectorAll(".lang-switch button").forEach(b=>b.classList.remove("active"));
+this.classList.add("active");
+let t=translations[this.textContent];
+
+document.getElementById("navServices").textContent=t.servicesNav;
+document.getElementById("navContact").textContent=t.contactNav;
+document.getElementById("servicesTitle").textContent=t.servicesTitle;
+document.getElementById("heroText").textContent=t.hero;
+document.getElementById("heroBtn").textContent=t.btn;
+document.getElementById("s1").textContent=t.s1;
+document.getElementById("s1p").textContent=t.s1p;
+document.getElementById("s2").textContent=t.s2;
+document.getElementById("s2p").textContent=t.s2p;
+document.getElementById("s3").textContent=t.s3;
+document.getElementById("s3p").textContent=t.s3p;
+document.getElementById("nameInput").placeholder=t.name;
+document.getElementById("emailInput").placeholder=t.email;
+document.getElementById("msgInput").placeholder=t.msg;
+document.getElementById("sendBtn").textContent=t.send;
+document.getElementById("addrLabel").textContent=t.addr;
+document.getElementById("phoneLabel").textContent=t.phone;
+document.getElementById("emailLabel").textContent=t.emailLabel;
+});
+});
+
+const topBtn=document.getElementById("topBtn");
+window.onscroll=function(){
+if(document.documentElement.scrollTop>300){topBtn.style.display="block";}
+else{topBtn.style.display="none";}
+};
+topBtn.onclick=function(){window.scrollTo({top:0,behavior:"smooth"});}
+</script>
+
+</body>
+</html>
